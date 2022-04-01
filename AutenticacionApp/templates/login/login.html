@@ -1,0 +1,16 @@
+{% extends "ProyectowebApp/base.html" %} <!--Hereda de base-->
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block contect %}
+
+<form action="" method="POST" style="color: white;">{% csrf_token %}
+    <div style="width: 75%; margin:auto;">
+        {{form|crispy}}
+        <button type="submit" class="btn btn-success">Login</button>
+    </div>
+    
+</form>
+{% endblock %}
