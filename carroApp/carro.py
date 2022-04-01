@@ -1,11 +1,11 @@
 class Carro:
     def __init__(self,request):
-        '''self.request= request
+        self.request= request
         self.session= request.session #iniciar la session
         carro= self.session.get("carro")
         if not carro:
             carro= self.session["carro"]={}
-        #else:'''
+        #else:
         self.carro= carro
 
     
