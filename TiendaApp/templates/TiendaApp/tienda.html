@@ -5,7 +5,12 @@
 {% block contect %}
 <div class="container">
     <div style="float:right;">
-        {% include "carroApp/widget.html" %}
+        {%  if request.user.is_authenticated %}
+            {% include "carroApp/widget.html" %}
+        
+        {% else %}
+            <span class="alert alert-danger text-center">LOGIN PARA VER CARRO</span>
+        {% endif %}
     </div>
     <div class="row">
         {% for producto in productos %}
