@@ -31,13 +31,13 @@ class Pedido(models.Model):
 
 class LineaPedido(models.Model):
     user= models.ForeignKey(User, on_delete=models.CASCADE)
-    producto_id= models.ForeignKey(producto, on_delete=models.CASCADE)
-    pedido_id= models.ForeignKey(Pedido, on_delete=models.CASCADE)
+    producto= models.ForeignKey(producto, on_delete=models.CASCADE)
+    pedido= models.ForeignKey(Pedido, on_delete=models.CASCADE)
     cantidad= models.IntegerField(default=1)
     created_at= models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.cantidad} Unidades de {self.producto_id.nombre}'
+        return f'{self.cantidad} Unidades de {self.producto.nombre}'
 
     class Meta:
         db_table= 'Lineapedidos'
